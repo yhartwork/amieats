@@ -23,8 +23,6 @@ namespace amieats
         public MainWindow()
         {
             InitializeComponent();
-
-            MessageBox.Show("Hello World");
         }
     }
 }
