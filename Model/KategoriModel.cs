@@ -14,10 +14,6 @@ namespace amieats.Model
         private SqlConnection conn;
         private SqlCommand command;
 
-        //declare variable
-        private string query;
-        private bool hasil;
-
         //constructor 
         public KategoriModel()
         {
