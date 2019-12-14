@@ -9,6 +9,95 @@
       Title="Home">
 
     <Grid>
-        
+        <Rectangle Fill="#FF620C70" HorizontalAlignment="Left" Height="73" Stroke="Black" VerticalAlignment="Top" Width="800" OpacityMask="Black"/>
+        <Rectangle Fill="#FFE7D7EA" HorizontalAlignment="Left" Height="77" Margin="0,73,0,0" Stroke="Black" VerticalAlignment="Top" Width="800"/>
+        <StackPanel HorizontalAlignment="Left" Height="128" Margin="16,162,0,0" VerticalAlignment="Top" Width="117">
+            <Image
+                Width="115" VerticalAlignment="Top" Source="Capture.PNG" Height="72" HorizontalAlignment="Left" Margin="2,0,0,0"/>
+            <Rectangle Fill="#FFE7D7EA" Height="63" Stroke="Black" VerticalAlignment="Top" Margin="0,0,-3,0" ClipToBounds="True" HorizontalAlignment="Left" Width="120"/>
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="128" Margin="178,162,0,0" VerticalAlignment="Top" Width="117">
+            <Image Height="76" Source="/amieats;component/Capture.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="54" Stroke="Black" VerticalAlignment="Top" Margin="0,0,-3,0" ClipToBounds="True"/>
+
+
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="128" Margin="340,162,0,0" VerticalAlignment="Top" Width="122">
+            <Image Height="76" Source="/amieats;component/Image2.png" Stretch="Fill"/>
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="128" Margin="504,162,0,0" VerticalAlignment="Top" Width="128">
+            <Image Height="83" Source="/amieats;component/Capture.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="48" Stroke="Black"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="128" Margin="665,162,0,0" VerticalAlignment="Top" Width="125">
+            <Image Height="80" Source="/amieats;component/Capture.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="48" Stroke="Black"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="119" Margin="16,321,0,0" VerticalAlignment="Top" Width="117">
+            <Image Height="76" Source="/amieats;component/Capture2.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="42" Stroke="Black"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="120" Margin="174,320,0,0" VerticalAlignment="Top" Width="115">
+            <Image Height="74" Source="/amieats;component/Capture.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="46" Stroke="Black"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="119" Margin="338,319,0,0" VerticalAlignment="Top" Width="122">
+            <Image Height="71" Source="/amieats;component/Capture.PNG" Stretch="Fill"/>
+            <Rectangle Fill="#FFE7D7EA" Height="48" Stroke="Black"/>
+
+        </StackPanel>
+        <Rectangle Fill="#FFFFCD1D" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="168" Margin="622,10,0,0" OpacityMask="#FF474648"/>
+        <Rectangle Fill="#FFC2B5C5" Stroke="Black" Margin="18,73,666,300">
+            <Rectangle.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF72DCB1" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Label Content="AmiEats&#xD;&#xA;EASY-CHEAP-TASTY" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Width="235" Height="50" FontSize="16"/>
+        <Image Margin="176,80,566,312" Source="/amieats;component/OK.PNG" Stretch="Fill"/>
+        <Image Margin="578,76,157,306" Source="/amieats;component/IYF.PNG" Stretch="Fill"/>
+        <Image Margin="46,81,696,303" Source="/amieats;component/AKJB.PNG" Stretch="Fill" RenderTransformOrigin="0.043,0.136"/>
+        <Rectangle Fill="#FFE7D7EA" HorizontalAlignment="Left" Height="53" Margin="340,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="122"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="12" Margin="57,129,0,0" VerticalAlignment="Top" Width="36" CornerRadius="5" Background="#B8000000">
+            <Label Content="RICE" HorizontalAlignment="Left" Height="21" Margin="4,-6,-15,-5" VerticalAlignment="Top" Width="45" FontSize="8" Foreground="White"/>
+        </Border>
+        <Image Margin="277,78,467,308" Source="/amieats;component/kjfvb.PNG" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="14" Margin="280,121,0,0" VerticalAlignment="Top" Width="50" CornerRadius="6">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1D0D0D" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Label Content="soup" HorizontalAlignment="Left" Height="26" Margin="6,-9,-12,-5" VerticalAlignment="Top" Width="54" Foreground="White" Background="#00000000"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="14" Margin="585,121,0,0" VerticalAlignment="Top" Width="50" CornerRadius="5" Background="Black"/>
+        <Image Margin="480,80,258,310" Source="/amieats;component/ijnbef.PNG" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.512"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.241"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="14" Margin="487,121,0,0" VerticalAlignment="Top" Width="49" CornerRadius="5" Background="Black"/>
+        <Image Margin="382,84,366,311" Source="/amieats;component/u.PNG" Stretch="Fill"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="14" Margin="381,122,0,0" VerticalAlignment="Top" Width="52" CornerRadius="5" Background="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="13" Margin="180,122,0,0" VerticalAlignment="Top" Width="51" CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Label Content="NOODLE" HorizontalAlignment="Left" Margin="2,-6,0,-5" VerticalAlignment="Top" FontSize="9" Foreground="White"/>
+        </Border>
     </Grid>
 </Page>

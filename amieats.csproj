@@ -124,6 +124,53 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Capture2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="OK.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IYF.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AKJB.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kjfvb.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ijnbef.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="u.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
