@@ -15,7 +15,9 @@ namespace amieats.Model
         {
             try
             {
-                conn = new SqlConnection("Server=ICTDEVELOPER/SQLEXPRESS;Database=amieats;Trusted_Connection=Yes;");
+                conn = new SqlConnection("Data Source=LAPTOP-J30TNGBU\\SQLEXPRESS;" +
+                "Initial Catalog=amieats;" +
+                "Integrated Security=true");
                 return conn;
             }
             catch (Exception err)
