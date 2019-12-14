@@ -58,7 +58,7 @@ namespace amieats.Model
                 command = new SqlCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT * FROM kategori WHERE id_kategori =" + id_kategori;
+                command.CommandText = "SELECT * FROM kategori";
                 SqlDataAdapter sda = new SqlDataAdapter(command);
                 sda.Fill(kategori, "kategori");
                 conn.Close();
