@@ -177,28 +177,7 @@
     <Resource Include="u.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="OVO %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="15 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Group 6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Group 7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logo OVO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Group 10.png" />
+    <Resource Include="Image\thumbnail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

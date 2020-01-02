@@ -8,8 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label Content="Tim Amieats" HorizontalAlignment="Left" Margin="365,182,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" VerticalAlignment="Top"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="64" Stroke="Black" VerticalAlignment="Top" Width="792"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="674,12,0,0" VerticalAlignment="Top" Width="108" Height="41"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="350,228,0,0" VerticalAlignment="Top" Width="108" Height="40"/>
 
     </Grid>
 </Window>
