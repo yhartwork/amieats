@@ -179,5 +179,19 @@
   <ItemGroup>
     <Resource Include="Image\thumbnail.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\amieats-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\cart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\category\category %281%29.png" />
+    <Resource Include="Image\category\category %282%29.png" />
+    <Resource Include="Image\category\category %283%29.png" />
+    <Resource Include="Image\category\category %284%29.png" />
+    <Resource Include="Image\category\category %285%29.png" />
+    <Resource Include="Image\category\category %286%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

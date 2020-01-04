@@ -6,112 +6,106 @@
       xmlns:local="clr-namespace:amieats.View"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
-      Title="Home">
-    <DockPanel LastChildFill="False">
-        <Grid DockPanel.Dock="Top" Height="70">
-            <Rectangle Fill="#FF620C70" HorizontalAlignment="Left" Height="73" Stroke="Transparent" VerticalAlignment="Top" Width="800" OpacityMask="Black"/>
-            <Rectangle Fill="#FFFFCD1D" HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="168" Margin="622,10,0,0" OpacityMask="#FF474648"/>
+      Title="Home" Loaded="Page_Loaded">
+    <Grid>
+        <Grid Panel.ZIndex="2" x:Name="overlay" Visibility="Visible">
+            <Rectangle Fill="#B2000000"/>
+            <Border Background="White" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="350" CornerRadius="10">
+                <Frame x:Name="frmDetail" Margin="10"/>
+            </Border>
         </Grid>
-        <Grid DockPanel.Dock="Top" Height="100" Background="#FFE7D7EA">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" BorderThickness="0" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="134" Background="#0C000000">
+        <DockPanel LastChildFill="False">
+            <Grid DockPanel.Dock="Top" Height="70">
+                <Rectangle Fill="#FF620C70" Height="73" Stroke="Transparent" VerticalAlignment="Top" OpacityMask="Black" Margin="0,0,0,-3"/>
+                <Border Margin="0,10,24,0" Background="#FFFFCD1D" BorderBrush="{x:Null}" Padding="10" VerticalAlignment="Top" CornerRadius="5" HorizontalAlignment="Right" Width="178">
+                    <DockPanel LastChildFill="False">
+                        <StackPanel Width="116">
+                            <Label DockPanel.Dock="Left" Content="CHECKOUT" Width="116" FontFamily="Segoe UI Bold" Foreground="White" Padding="0" HorizontalAlignment="Left" FontSize="14"/>
+                            <Label DockPanel.Dock="Left" Content="2 Item (Rp. 20.000)" Foreground="White" Padding="0" FontSize="9"/>
+                        </StackPanel>
+                        <Image DockPanel.Dock="Right" Source="/amieats;component/Image/cart-icon.png" Width="27" Height="27" />
+                    </DockPanel>
+                </Border>
+                <Image HorizontalAlignment="Left" Height="43" Margin="29,10,0,0" VerticalAlignment="Top" Width="132" Source="/amieats;component/Image/amieats-logo.png"/>
+            </Grid>
+            <Grid x:Name="gridCategory" DockPanel.Dock="Top" Height="130" Background="#FFE7D7EA">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134" Background="#0C000000">
                     <StackPanel HorizontalAlignment="Center">
-                        <Image Source="/amieats;component/Image/thumbnail.png" Margin="0,10,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
-                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-10,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
-                            <Label Content="LABEL" Margin="0,0,0,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="67"/>
+                        <Image Source="/amieats;component/Image/category/category (1).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="NOODLE" Margin="-1,0,-1,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="66"/>
                         </Border>
                     </StackPanel>
                 </Border>
-        </Grid>
-        <Grid DockPanel.Dock="Top" Height="430" Margin="10,0">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="1">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="3">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="4">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="0" Grid.Row="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="1" Grid.Row="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="2" Grid.Row="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="3" Grid.Row="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-            <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="195" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" Grid.Column="4" Grid.Row="2">
-                <StackPanel Height="194" Margin="0,0,-1,0" VerticalAlignment="Top">
-                    <Image HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Source="/amieats;component/Image/thumbnail.png"/>
-                    <Label Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
-                    <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,    0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
-                </StackPanel>
-            </Border>
-        </Grid>
-    </DockPanel>
+                <Border Grid.Column="1" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="/amieats;component/Image/category/category (2).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="SOUP" Margin="-1,0,-1,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="66"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="/amieats;component/Image/category/category (3).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="VEGGIE" Margin="-1,0,-1,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="66"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="3" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="/amieats;component/Image/category/category (4).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="SNACK" Margin="-1,0,-1,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="66"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="4" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="/amieats;component/Image/category/category (5).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="RICE" Margin="-1,0,-1,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="66"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="5" BorderThickness="0" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="134" Margin="0,0,-1,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Source="/amieats;component/Image/category/category (6).png" Margin="0,24,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="True" Width="72" />
+                        <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">
+                            <Label Content="DRINK" Margin="0,0,0,-1" VerticalAlignment="Top" Padding="0" Foreground="White" HorizontalContentAlignment="Center" Height="20" HorizontalAlignment="Left" Width="67"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Grid x:Name="gridMenu" DockPanel.Dock="Top" Height="400" Margin="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="#FFC3C3C3" BorderThickness="1" HorizontalAlignment="Left" Height="180" Margin="10,10,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.5,0.5" Background="White" CornerRadius="4" ClipToBounds="True">
+                    <StackPanel Height="171" Margin="0,0,-1,-1" VerticalAlignment="Top">
+                        <Image HorizontalAlignment="Left" Height="111" Margin="0,0,0,0" VerticalAlignment="Top" Width="138" Source="/amieats;component/Image/thumbnail.png"/>
+                        <Label x:Name="lblMenu1" Content="Nasi Goreng" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center"/>
+                        <Label Content="Rp. 10.000" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" Height="20" FontFamily="Segoe UI Bold" Padding="0" HorizontalContentAlignment="Center" Foreground="#FF727272"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </DockPanel>
+    </Grid>
 </Page>
