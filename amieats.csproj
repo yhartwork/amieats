@@ -58,8 +58,10 @@
     </ApplicationDefinition>
     <Compile Include="Controller\ConnectionController.cs" />
     <Compile Include="Model\Connection.cs" />
+    <Compile Include="Model\ItemTransaksiModel.cs" />
     <Compile Include="Model\KategoriModel.cs" />
-    <Compile Include="Model\KeranjangModel.cs" />
+    <Compile Include="Model\Laporan.cs" />
+    <Compile Include="Model\TransaksiModel.cs" />
     <Compile Include="Model\MenuModel.cs" />
     <Compile Include="View\Cart.xaml.cs">
       <DependentUpon>Cart.xaml</DependentUpon>
@@ -175,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="u.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
