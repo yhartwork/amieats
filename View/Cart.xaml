@@ -5,8 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:amieats.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="Cart">
 
-    <Grid/>
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="450" Margin="0,0,0,-0.4" Stroke="Black" VerticalAlignment="Top" Width="800"/>
+        <Rectangle Fill="#FF620C70" HorizontalAlignment="Left" Height="77" Stroke="Black" VerticalAlignment="Top" Width="800"/>
+        <Button HorizontalAlignment="Left" Height="70" Margin="276,120,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606"/>
+        <Label Content="PILIH PEMBAYARAN" HorizontalAlignment="Left" Margin="276,18,0,0" VerticalAlignment="Top" Width="250" Height="40" Foreground="White" FontSize="25" FontFamily="Franklin Gothic Demi" RenderTransformOrigin="0.589,0.517"/>
+        <Rectangle HorizontalAlignment="Left" Height="40" Margin="28,18,0,0" VerticalAlignment="Top" Width="40"/>
+        <Image Margin="30,22,735,542" Source="/amieats;component/Group.png" Stretch="Fill"/>
+        <Button HorizontalAlignment="Left" Height="70" Margin="276,195,0,0" VerticalAlignment="Top" Width="250" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
+            <Image Height="62" Source="/amieats;component/Group 6.png" Stretch="Fill" Width="240"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="70" Margin="276,345,0,0" VerticalAlignment="Top" Width="250" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Height="59" Source="/amieats;component/Group 7.png" Stretch="Fill" Width="240"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="70" Margin="276,270,0,0" VerticalAlignment="Top" Width="250" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Height="64" Source="/amieats;component/15 1.png" Stretch="Fill" Width="240"/>
+        </Button>
+
+    </Grid>
 </Page>
