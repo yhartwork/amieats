@@ -23,6 +23,47 @@ namespace amieats.View
         public Home()
         {
             InitializeComponent();
+
+        }
+
+        void categoryClick(object sender, RoutedEventArgs e)
+        {
+
+            // Reset all color
+            UIElementCollection childrenList = gridCategory.Children;
+            foreach (Border child in childrenList)
+            {
+                child.Background = Brushes.Transparent;
+            }
+
+            // Change clicked element color
+            Border src = sender as Border;
+            src.Background = new SolidColorBrush(Color.FromArgb(20, 0, 0, 0)); ;
+        }
+
+        void menuClick(object sender, RoutedEventArgs e)
+        {
+            // open overlay window
+            overlay.Visibility = Visibility.Visible;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            UIElementCollection categoryList = gridCategory.Children;
+            UIElementCollection menuList = gridMenu.Children;
+
+            foreach (UIElement child in categoryList)
+            {
+                child.MouseDown += new MouseButtonEventHandler(categoryClick);
+            }
+
+            foreach(UIElement child in menuList)
+            {
+                child.MouseDown += new MouseButtonEventHandler(menuClick);
+            }
+
+            // Load frame detail
+            frmDetail.Content = new Detail();
         }
     }
 }
