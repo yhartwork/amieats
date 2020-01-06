@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace amieats.View
 {
     /// <summary>
-    /// Interaction logic for Pay.xaml
+    /// Interaction logic for Splash.xaml
     /// </summary>
-    public partial class Cart : Page
+    public partial class Splash : Page
     {
-        public Cart()
+        public Splash()
         {
             InitializeComponent();
-        }
-
-        private void btnGotoPay_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Pay());
-        }
-
-        private void btnBackToHome_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
         }
     }
 }

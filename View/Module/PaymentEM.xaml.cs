@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace amieats.View
+namespace amieats.View.Module
 {
     /// <summary>
-    /// Interaction logic for Pay.xaml
+    /// Interaction logic for PatmentEM.xaml
     /// </summary>
-    public partial class Cart : Page
+    public partial class PatmentEM : UserControl
     {
-        public Cart()
+        public PatmentEM()
         {
             InitializeComponent();
-        }
-
-        private void btnGotoPay_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Pay());
-        }
-
-        private void btnBackToHome_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
         }
     }
 }

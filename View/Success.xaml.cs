@@ -16,28 +16,25 @@ using System.Windows.Shapes;
 namespace amieats.View
 {
     /// <summary>
-    /// Interaction logic for Detail.xaml
+    /// Interaction logic for Success.xaml
     /// </summary>
-    public partial class Detail : Page
+    public partial class Success : Page
     {
-        public Detail()
+        public Success()
         {
             InitializeComponent();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnPlus_Click(object sender, RoutedEventArgs e)
-        {
-            txtQty.Content = Int16.Parse(txtQty.Content.ToString()) + 1;
-        }
-
-        private void btnMinus_Click(object sender, RoutedEventArgs e)
-        {
-            txtQty.Content = Int16.Parse(txtQty.Content.ToString()) - 1;
+            Task.Delay(10000).ContinueWith(_ =>
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    NavigationService.Navigate(new View.Home());
+                });
+            }
+            );
         }
     }
 }

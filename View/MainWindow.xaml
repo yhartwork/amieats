@@ -5,5 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:amieats"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="810" Source="Home.xaml" ShowsNavigationUI="False" >
+        Margin="0"
+        Title="AmiEats v1.0" Height="640" Width="810" ShowsNavigationUI="False" Navigating="NavigationWindow_Navigating" Loaded="NavigationWindow_Loaded" Background="#FFFDFDFD" >
+
 </NavigationWindow>

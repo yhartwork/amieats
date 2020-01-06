@@ -61,8 +61,20 @@
     <Compile Include="Model\KategoriModel.cs" />
     <Compile Include="Model\KeranjangModel.cs" />
     <Compile Include="Model\MenuModel.cs" />
-    <Compile Include="View\Cart.xaml.cs">
-      <DependentUpon>Cart.xaml</DependentUpon>
+    <Compile Include="View\Module\PaymentEM.xaml.cs">
+      <DependentUpon>PaymentEM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Module\PaymentCash.xaml.cs">
+      <DependentUpon>PaymentCash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Module\PaymentOVO.xaml.cs">
+      <DependentUpon>PaymentOVO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Module\PaymentGopay.xaml.cs">
+      <DependentUpon>PaymentGopay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pay.xaml.cs">
+      <DependentUpon>Pay.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Detail.xaml.cs">
       <DependentUpon>Detail.xaml</DependentUpon>
@@ -70,8 +82,14 @@
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pay.xaml.cs">
-      <DependentUpon>Pay.xaml</DependentUpon>
+    <Compile Include="View\Cart.xaml.cs">
+      <DependentUpon>Cart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Success.xaml.cs">
+      <DependentUpon>Success.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -85,7 +103,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Cart.xaml">
+    <Page Include="View\Module\PaymentEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Module\PaymentCash.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Module\PaymentOVO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Module\PaymentGopay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,7 +131,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pay.xaml">
+    <Page Include="View\Cart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Success.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,54 +171,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="View\Capture.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Capture2.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Capture.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="OK.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="IYF.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="AKJB.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="kjfvb.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ijnbef.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="u.PNG" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\thumbnail.png" />
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +186,39 @@
     <Resource Include="Image\category\category %284%29.png" />
     <Resource Include="Image\category\category %285%29.png" />
     <Resource Include="Image\category\category %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\asset\left-arrow 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\asset\close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\logo-gopay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\ovo-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\e-money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo-amieats-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\qr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\ovo-qr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\debit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\vendor\receipt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\asset\check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
