@@ -1,19 +1,4 @@
-﻿CREATE DATABASE	amieats
-
-ON (
-	name = amieats_data,
-	filename = "E:\amieats\amieats.mdf",
-	size = 10,
-	maxsize = 50,
-	filegrowth = 5
-)
-LOG ON (
-	name = amieats_log,
-	filename = "E:\amieats\amieats.ldf",
-	size = 5,
-	maxsize = 25,
-	filegrowth = 5
-)
+﻿CREATE DATABASE	amieats;
 
 USE amieats;
 
@@ -108,5 +93,3 @@ where transaksi.tanggal>='2020/01/01' or transaksi.tanggal<='2020/01/30'
 select * from transaksi_item
 
 select * from variasi
-
-DELETE FROM variasi
