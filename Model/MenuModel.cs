@@ -93,25 +93,28 @@ namespace amieats.Model
 
         // fungsi menampilkan detail menu
 
-        public DataSet SelectDetailMenu(int id_kategori)
+        public DataSet SelectDetailMenu(int id_menu)
         {
-            DataSet daftarmenu = new DataSet();
+            DataSet detailmenu = new DataSet();
             try
             {
                 conn.Open();
                 command = new SqlCommand();
                 command.Connection = conn;
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT * FROM menu WHERE id_menu=" + id_menu;
+                command.CommandText =   "SELECT m.*, k.nama [kategori], w.nama [warung] FROM menu m " +
+                                        "JOIN kategori k ON m.id_kategori=k.id_kategori " +
+                                        "JOIN warung w ON m.id_warung=w.id_warung " +
+                                        "WHERE id_menu=" + id_menu;
                 SqlDataAdapter sda = new SqlDataAdapter(command);
-                sda.Fill(daftarmenu, "menu");
+                sda.Fill(detailmenu, "menu");
                 conn.Close();
             }
             catch (SqlException)
             {
 
             }
-            return daftarmenu;
+            return detailmenu;
         }
 
         // menambahkan menu baru

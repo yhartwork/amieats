@@ -16,9 +16,5 @@ namespace amieats.Controller
         {
             connectionModel = new Model.Connection();
         }
-
-        public void testConnection()
-        {
-        }
     }
 }

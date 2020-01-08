@@ -21,9 +21,13 @@ namespace amieats.View
     /// </summary>
     public partial class Pay : Page
     {
+
+        private Controller.PayController cPay;
+
         public Pay()
         {
             InitializeComponent();
+            cPay = new Controller.PayController(this);
         }
 
         private void btnBackToCart_Click(object sender, RoutedEventArgs e)
@@ -66,24 +70,28 @@ namespace amieats.View
         private void payGopay_Click(object sender, RoutedEventArgs e)
         {
             frmPay.Content = new Module.PatmentGopay();
+            cPay.setMetodePembayaran("go-pay");
             animatePaymentPopup();
         }
 
         private void payOVO_Click(object sender, RoutedEventArgs e)
         {
             frmPay.Content = new Module.PaymentOVO();
+            cPay.setMetodePembayaran("ovo");
             animatePaymentPopup();
         }
 
         private void payEM_Click(object sender, RoutedEventArgs e)
         {
             frmPay.Content = new Module.PatmentEM();
+            cPay.setMetodePembayaran("e-money");
             animatePaymentPopup();
         }
 
         private void payCash_Click(object sender, RoutedEventArgs e)
         {
             frmPay.Content = new Module.PaymentCash();
+            cPay.setMetodePembayaran("cash");
             animatePaymentPopup();
         }
 
@@ -114,8 +122,18 @@ namespace amieats.View
         {
             if (e.Key == Key.LeftCtrl)
             {
+                // insert to database
+                cPay.submitTransaction();
+
+                // move to success page
                 NavigationService.Navigate(new Success());
             }
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.DragMove();
         }
     }
 }

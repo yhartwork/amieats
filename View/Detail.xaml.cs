@@ -12,32 +12,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace amieats.View
 {
+
     /// <summary>
     /// Interaction logic for Detail.xaml
     /// </summary>
     public partial class Detail : Page
     {
-        public Detail()
+
+        private Controller.DetailController cDetail;
+
+        public Detail(DataRow dataDetail, View.Home vHome)
         {
             InitializeComponent();
-        }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
+            this.cDetail = new Controller.DetailController(this, dataDetail, vHome);
         }
 
         private void btnPlus_Click(object sender, RoutedEventArgs e)
         {
-            txtQty.Content = Int16.Parse(txtQty.Content.ToString()) + 1;
+            cDetail.addQty();
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
         {
-            txtQty.Content = Int16.Parse(txtQty.Content.ToString()) - 1;
+            cDetail.subQty();
+        }
+
+        private void cboxVariasi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cDetail.updateVariasi();
+        }
+
+        private void btnAdd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            cDetail.addToCart();
         }
     }
 }

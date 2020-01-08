@@ -17,7 +17,6 @@ namespace amieats.Model
         //declare variable
         private string query;
         private bool hasil;
-        private string keranjang;
 
         //constructor 
         public TransaksiModel()
@@ -27,41 +26,11 @@ namespace amieats.Model
 
         //declare attribute
         private int id_transaksi;
-        private int id_item;
-        private int id_variasi;
-        private int id_kategori;
-        private string nama;
         private string tanggal;
         private int total;
-        private int subtotal;
-        private string status_transaksi;
+        private string kode_meja;
         private string metode_pembayaran;
         
-
-        public void SetId_transaksi(int data)
-        {
-            id_transaksi = data;
-        }
-
-        public void SetId_item(int data)
-        {
-            id_item = data;
-        }
-
-        public void SetId_variasi(int data)
-        {
-            id_variasi = data;
-        }
-
-        public void SetId_kategori(int data)
-        {
-            id_kategori = data;
-        }
-
-        public void SetNama (string data)
-        {
-            nama = data;
-        }
 
         public void SetTanggal(string data)
         {
@@ -73,21 +42,16 @@ namespace amieats.Model
             total = data;
         }
 
-        public void SetSubtotal(int data)
+        public void setKodeMeja(string data)
         {
-            subtotal = data;
-        }
-
-        public void SetStatustransaksi(string data)
-        {
-            status_transaksi = data;
+            kode_meja = data;
         }
 
         public void SetMetode(string data)
         {
             metode_pembayaran = data;
         }
-        // fungsi menampilkan semua menu 
+
         public DataSet SelectKeranjang()
         {
             DataSet keranjang = new DataSet();
@@ -132,51 +96,32 @@ namespace amieats.Model
         }
 
 
-        public Boolean InsertIntoTransaksi()
+        public int InsertTransaksi()
         {
+            int id;
+            DataSet transaksi = new DataSet();
             try
             {
-                query = "INSERT INTO transaksi VALUES(" + id_transaksi + "," + tanggal + "," + total +", '"+status_transaksi+"')";
+                query = "INSERT INTO transaksi (tanggal, total, kode_meja, metode_pembayaran) OUTPUT INSERTED.id_transaksi VALUES('" + tanggal + "'," + total +", '"+kode_meja+"', '"+metode_pembayaran+"')";
                 conn.Open();
                 command = new SqlCommand();
                 command.Connection = conn;
                 command.CommandText = query;
-                command.ExecuteNonQuery();
-                hasil = true;
+                command.CommandType = CommandType.Text;
+                //command.ExecuteNonQuery();
+                //id = (int) command.ExecuteScalar();
+                SqlDataAdapter sda = new SqlDataAdapter(command);
+                sda.Fill(transaksi, "transaksi");
                 conn.Close();
+
+                return int.Parse(transaksi.Tables[0].Rows[0]["id_transaksi"].ToString());
             }
             catch (SqlException)
             {
-                hasil = false;
+                id = 0;
             }
-            return hasil;
+            return id;
         }
-
-        // edit keranjang 
-        public Boolean UpdateStatus()
-        {
-            hasil = false;
-            try
-            {
-                query = "UPDATE keranjang SET status="+status_transaksi+" WHERE id_transaksi="+id_transaksi+"";
-                conn.Open();
-                command = new SqlCommand();
-                command.Connection = conn;
-                command.CommandText = query;
-                command.ExecuteNonQuery();
-                hasil = true;
-                conn.Close();
-            }
-            catch (SqlException)
-            {
-                hasil = false;
-            }
-            return hasil;
-        }
-
-
-
-
 
     }
 }

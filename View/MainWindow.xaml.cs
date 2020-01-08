@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace amieats
 {
@@ -66,14 +67,14 @@ namespace amieats
 
         private void NavigationWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Task.Delay(2000).ContinueWith(_ =>
+            Task.Delay(3000).ContinueWith(_ =>
             {
                 this.Dispatcher.Invoke(() =>
                 {
                     NavigationService.Navigate(new View.Home());
                 });
-            }
-            );
+            });
+
         }
     }
 }

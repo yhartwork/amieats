@@ -8,10 +8,9 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="Success" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid MouseDown="Rectangle_MouseDown">
         <Image HorizontalAlignment="Center" Height="298" Margin="0,-100,0,0" VerticalAlignment="Center" Width="160" Source="/amieats;component/Image/asset/check.png"/>
         <Label Content="Pemesanan Berhasil!" HorizontalAlignment="Center" Margin="284,344,284,214" VerticalAlignment="Center" FontSize="24" FontWeight="SemiBold" HorizontalContentAlignment="Center"/>
         <Label Content="Terima kasih sudah menggunakan aplikasi AmiEats!" HorizontalAlignment="Center" Margin="229,390,229,180" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" HorizontalContentAlignment="Center" Width="342" Foreground="#FF555555"/>
-
     </Grid>
 </Page>

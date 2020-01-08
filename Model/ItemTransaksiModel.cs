@@ -30,14 +30,9 @@ namespace amieats.Model
         private int id_menu;
         private int id_transaksi;
         private int subtotal;
-        private int tanggal;
         private string status;
+        private string note;
         private int qty;
-
-        public void SetId_item(int data)
-        {
-            id_item = data;
-        }
 
         public void SetId_variasi(int data)
         {
@@ -59,11 +54,6 @@ namespace amieats.Model
             subtotal = data;
         }
 
-        public void SetTanggal(int data)
-        {
-            tanggal = data;
-        }
-
         public void SetStatus(string data)
         {
             status = data;
@@ -72,6 +62,11 @@ namespace amieats.Model
         public void SetQty(int data)
         {
             qty = data;
+        }
+
+        public void setNote(string data)
+        {
+            note = data;
         }
             
       
@@ -105,7 +100,18 @@ namespace amieats.Model
         {
             try
             {
-                query = "INSERT INTO transaksi_item VALUES(" + id_item + "," + id_variasi + "," + id_menu + "," + id_transaksi + "," + subtotal + "," + tanggal + ", '"+status+"', "+qty+")";
+
+                var clean_id_variasi = "null";
+
+                if(id_variasi == 0)
+                {
+                    clean_id_variasi = "null";
+                } else
+                {
+                    clean_id_variasi = id_variasi.ToString();
+                }
+
+                query = "INSERT INTO transaksi_item (id_variasi, id_menu, id_transaksi, subtotal, qty, note, status_transaksi) VALUES(" + clean_id_variasi + "," + id_menu + "," + id_transaksi + "," + subtotal + "," + qty + ", '"+note+"', '"+status+"')";
                 conn.Open();
                 command = new SqlCommand();
                 command.Connection = conn;
@@ -114,9 +120,11 @@ namespace amieats.Model
                 hasil = true;
                 conn.Close();
             }
-            catch (SqlException)
+            catch (SqlException err)
             {
                 hasil = false;
+                Console.WriteLine(err);
+                Console.WriteLine(query);
             }
             return hasil;
         }

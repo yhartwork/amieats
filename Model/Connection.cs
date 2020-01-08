@@ -15,7 +15,7 @@ namespace amieats.Model
         {
             try
             {
-                conn = new SqlConnection("Data Source=LAPTOP-J30TNGBU\\SQLEXPRESS;" +
+                conn = new SqlConnection("Data Source=ICTDEVELOPER\\SQLEXPRESS;" +
                 "Initial Catalog=amieats;" +
                 "Integrated Security=true");
                 return conn;

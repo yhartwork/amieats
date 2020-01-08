@@ -25,7 +25,7 @@
         </Grid>
         <DockPanel>
             <Grid DockPanel.Dock="Top" Height="70">
-                <Rectangle Fill="#FF620C70" Height="73" Stroke="Transparent" VerticalAlignment="Top" OpacityMask="Black" Margin="0"/>
+                <Rectangle Fill="#FF620C70" Height="73" Stroke="Transparent" VerticalAlignment="Top" OpacityMask="Black" Margin="0" MouseDown="Rectangle_MouseDown"/>
                 <Label Content="PILIH PEMBAYARAN" HorizontalAlignment="Center" Margin="0,12,0,14" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="246"/>
                 <Button x:Name="btnBackToHome" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="58" Height="50" BorderBrush="{x:Null}" Background="{x:Null}" Click="btnBackToCart_Click">
                     <Image HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="35" Source="/amieats;component/Image/asset/left-arrow 1.png"/>
@@ -34,16 +34,16 @@
             <Grid DockPanel.Dock="Top">
             </Grid>
         </DockPanel>
-        <Button x:Name="payGopay" HorizontalAlignment="Center" Height="80" Margin="0,100,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payGopay_Click">
+        <Button x:Name="payGopay" HorizontalAlignment="Center" Height="80" Margin="0,100,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payGopay_Click" Cursor="Hand">
             <Image x:Name="___No_Name_" Height="49" Width="225" Source="/amieats;component/Image/vendor/logo-gopay.png"/>
         </Button>
-        <Button x:Name="payOVO" HorizontalAlignment="Center" Height="80" Margin="0,200,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payOVO_Click">
+        <Button x:Name="payOVO" HorizontalAlignment="Center" Height="80" Margin="0,200,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payOVO_Click" Cursor="Hand">
             <Image x:Name="___No_Name_1" Height="49" Width="225" Source="/amieats;component/Image/vendor/ovo-logo.png"/>
         </Button>
-        <Button x:Name="payEM" HorizontalAlignment="Center" Height="80" Margin="0,302,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payEM_Click">
+        <Button x:Name="payEM" HorizontalAlignment="Center" Height="80" Margin="0,302,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payEM_Click" Cursor="Hand">
             <Image x:Name="___No_Name_2" Height="72" Width="225" Source="/amieats;component/Image/vendor/e-money.png"/>
         </Button>
-        <Button x:Name="payCash" HorizontalAlignment="Center" Height="80" Margin="0,406,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payCash_Click">
+        <Button x:Name="payCash" HorizontalAlignment="Center" Height="80" Margin="0,406,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF461C1C" Background="White" Foreground="#FF1A0606" Click="payCash_Click" Cursor="Hand">
             <Label Content="Bayar Langsung (Cash)" FontSize="18" FontWeight="SemiBold"/>
         </Button>
     </Grid>

@@ -20,9 +20,25 @@ namespace amieats.View
     /// </summary>
     public partial class Cart : Page
     {
+
+
+        //declare object controller
+        private Controller.CartController cCart;
+
         public Cart()
         {
             InitializeComponent();
+            cCart = new Controller.CartController(this);
+        }
+
+        public void updateTotal()
+        {
+            cCart.updateTotal();
+        }
+
+        public void updateCart()
+        {
+            cCart.updateCart();
         }
 
         private void btnGotoPay_MouseDown(object sender, MouseButtonEventArgs e)
@@ -33,6 +49,12 @@ namespace amieats.View
         private void btnBackToHome_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.DragMove();
         }
     }
 }

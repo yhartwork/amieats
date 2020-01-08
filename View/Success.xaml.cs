@@ -27,7 +27,7 @@ namespace amieats.View
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Task.Delay(10000).ContinueWith(_ =>
+            Task.Delay(5000).ContinueWith(_ =>
             {
                 this.Dispatcher.Invoke(() =>
                 {
@@ -35,6 +35,12 @@ namespace amieats.View
                 });
             }
             );
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.DragMove();
         }
     }
 }

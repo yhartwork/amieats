@@ -38,6 +38,5 @@ namespace amieats.Model
             return transaksi;
         }
 
-        where tanggal=>tgl_awal and tanggal<=tgl_akhir
     }
 }

@@ -1,20 +1,5 @@
 ﻿CREATE DATABASE	amieats
 
-ON (
-	name = amieats_data,
-	filename = "E:\amieats\amieats.mdf",
-	size = 10,
-	maxsize = 50,
-	filegrowth = 5
-)
-LOG ON (
-	name = amieats_log,
-	filename = "E:\amieats\amieats.ldf",
-	size = 5,
-	maxsize = 25,
-	filegrowth = 5
-)
-
 USE amieats;
 
 CREATE TABLE warung (
@@ -71,24 +56,32 @@ ALTER table transaksi_item ADD note text null
 insert into warung values ('00001','Warung Bu Tini')
 insert into warung values ('00002','Warung Pak Jono')
 
-insert into kategori values ('00001', 'Nasi'),('00002', 'Mie'), ('00003', 'Sup'), ('00004', 'Snack'), ('00005', 'Minuman');
+insert into kategori values ('00001', 'Mie'),('00002', 'Sop'), ('00003', 'Snek'), ('00004', 'Sayur'), ('00005', 'Nasi'), ('00006', 'Minum');
 
-insert into menu values ('00001','Nasi Goreng Ayam','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001'),
-('00002','Mie Ayam','mieayam.jpg','Mie ayam dengan bumbu special, dengan campuran ayam bumbu manis','10000', '0002','0002');
+insert into menu values 
+('00001','Nasi Goreng Ayam','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001'),
+('00002','Mie Ayam','mieayam.jpg','Mie ayam dengan bumbu special, dengan campuran ayam bumbu manis','10000', '0002','0002'),
+('00003','Nasi Kuning','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001'),
+('00004','Nasi Merah','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001'),
+('00005','Nasi Hijau','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001'),
+('00006','Nasi Biru','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001');
+insert into menu values 
+('00007','Nasi Pink','nasigoreng.jpg','Nasi goreng dengan bumbu special, dengan campuran telur ayam dan bakso','15000', '0001','0001');
+
 
 insert into variasi values ('00001','extra telur','jangan pakai kobis','3000','00001'),
 ('00002','extra bakso','jangan pakai sawi','4000','00002'),
 ('00003','extra cabe','jangan pakai kobis','500','00001'),
 ('00004','extra ayam','jangan pakai saus','3000','00002');
 
-insert into transaksi values ('00001','2020/01/04','18000','sukes', 'A01', 'Go-pay'),
-('00002','2020/01/04','18000','sukes', 'A01', 'Go-pay'),
-('00003','2020/01/01','14000','sukes', 'A10', 'Cash'),
-('00004','2020/01/01','14000','sukes', 'A10', 'Cash'),
-('00005','2019/12/09','15500','sukes', 'B01', 'Ovo'),
-('00006','2019/12/09','15500','sukes', 'B01', 'Ovo'),
-('00007','2020/02/08','13000','sukes', 'A11', 'Go-pay'),
-('00008','2020/02/08','13000','sukes', 'A11', 'Go-pay');
+insert into transaksi values ('00001','2020/01/04','18000','sukses', 'A01', 'Go-pay'),
+('00002','2020/01/04','18000','sukses', 'A01', 'Go-pay'),
+('00003','2020/01/01','14000','sukses', 'A10', 'Cash'),
+('00004','2020/01/01','14000','sukses', 'A10', 'Cash'),
+('00005','2019/12/09','15500','sukses', 'B01', 'Ovo'),
+('00006','2019/12/09','15500','sukses', 'B01', 'Ovo'),
+('00007','2020/02/08','13000','sukses', 'A11', 'Go-pay'),
+('00008','2020/02/08','13000','sukses', 'A11', 'Go-pay');
 
 insert into transaksi_item values ('00001',1,'00001','00001','18000', 1, null)
 insert into transaksi_item values ('00002',2,'00002','00002','18000', 1, null)

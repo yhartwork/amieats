@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:amieats"
         mc:Ignorable="d"
         Margin="0"
-        Title="AmiEats v1.0" Height="640" Width="810" ShowsNavigationUI="False" Navigating="NavigationWindow_Navigating" Loaded="NavigationWindow_Loaded" Background="#FFFDFDFD" >
-
-</NavigationWindow>
+        Title="AmiEats v1.0" 
+        Height="640" 
+        Width="810" 
+        ShowsNavigationUI="False"
+        Navigating="NavigationWindow_Navigating" 
+        Loaded="NavigationWindow_Loaded" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}" WindowStyle="None" ResizeMode="NoResize"                   
+/>

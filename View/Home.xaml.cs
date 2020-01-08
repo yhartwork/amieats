@@ -21,10 +21,14 @@ namespace amieats.View
     /// </summary>
     public partial class Home : Page
     {
+
+        //declare object controller
+        private Controller.HomeController cHome;
+
         public Home()
         {
             InitializeComponent();
-
+            cHome = new Controller.HomeController(this);
         }
 
         void categoryClick(object sender, RoutedEventArgs e)
@@ -32,17 +36,74 @@ namespace amieats.View
 
             // Reset all color
             UIElementCollection childrenList = gridCategory.Children;
-            foreach (Border child in childrenList)
+            foreach (View.Module.ItemCategory child in childrenList)
             {
-                child.Background = Brushes.Transparent;
+                child.unselect();
             }
 
             // Change clicked element color
-            Border src = sender as Border;
-            src.Background = new SolidColorBrush(Color.FromArgb(20, 0, 0, 0)); ;
+            View.Module.ItemCategory src = sender as View.Module.ItemCategory;
+            src.select();
+
+            // Load the menu
+            cHome.showMenu(src.getId());
         }
 
         void menuClick(object sender, RoutedEventArgs e)
+        {
+            View.Module.ItemMenu src = sender as View.Module.ItemMenu;
+
+            // load from database
+            cHome.loadMenuDetail(src.getId());
+
+            // display popup
+            openPopup();
+        }
+
+        public void updateCartLabel(int qty, int total)
+        {
+            string label = qty + " item (Rp " + total + ")";
+            lblTotal.Content = label;
+        }
+
+        public void activateMenu()
+        {
+            UIElementCollection menuList = gridMenu.Children;
+
+            foreach (UIElement child in menuList)
+            {
+                child.MouseDown += new MouseButtonEventHandler(menuClick);
+            }
+
+        }
+
+        public void activateCategory()
+        {
+            UIElementCollection categoryList = gridCategory.Children;
+
+            foreach (UIElement child in categoryList)
+            {
+                child.MouseDown += new MouseButtonEventHandler(categoryClick);
+            }
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Cart());
+        }
+
+        private void borderClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            closePopup();
+        }
+
+        private void Sb_Completed(object sender, EventArgs e)
+        {
+            // close overlay window
+            overlay.Visibility = Visibility.Hidden;
+        }
+
+        public void openPopup()
         {
             // open overlay window
             overlay.Visibility = Visibility.Visible;
@@ -73,33 +134,8 @@ namespace amieats.View
             sb.Begin();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public void closePopup()
         {
-            UIElementCollection categoryList = gridCategory.Children;
-            UIElementCollection menuList = gridMenu.Children;
-
-            foreach (UIElement child in categoryList)
-            {
-                child.MouseDown += new MouseButtonEventHandler(categoryClick);
-            }
-
-            foreach(UIElement child in menuList)
-            {
-                child.MouseDown += new MouseButtonEventHandler(menuClick);
-            }
-
-            // Load frame detail
-            frmDetail.Content = new Detail();
-        }
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Cart());
-        }
-
-        private void borderClose_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            // animate it
             DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(0.3), FillBehavior.HoldEnd);
             fadeOut.BeginTime = TimeSpan.FromSeconds(0);
 
@@ -114,10 +150,14 @@ namespace amieats.View
             sb.Begin();
         }
 
-        private void Sb_Completed(object sender, EventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            // close overlay window
-            overlay.Visibility = Visibility.Hidden;
+        }
+
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.DragMove();
         }
     }
 }

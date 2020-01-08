@@ -45,7 +45,7 @@ namespace amieats.Model
         }
 
         //fungsi menampilkan kategori
-        public DataSet SelectKategori(int id_kategori)
+        public DataSet SelectKategori()
         {
             DataSet kategori = new DataSet();
             try
@@ -61,7 +61,7 @@ namespace amieats.Model
             }
             catch (SqlException)
             {
-
+                conn.Close();
             }
             return kategori;
         }
