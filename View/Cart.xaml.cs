@@ -41,11 +41,6 @@ namespace amieats.View
             cCart.updateCart();
         }
 
-        private void btnGotoPay_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Pay());
-        }
-
         private void btnBackToHome_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
@@ -55,6 +50,12 @@ namespace amieats.View
         {
             Window parent = Window.GetWindow(this);
             parent.DragMove();
+        }
+
+        private void btnGotoPay_Click(object sender, RoutedEventArgs e)
+        {
+            string kode = kodeMeja.Text;
+            NavigationService.Navigate(new Pay(kode));
         }
     }
 }

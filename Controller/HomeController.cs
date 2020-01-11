@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Controls;
+using System.Windows;
+using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace amieats.Controller
 {
@@ -27,7 +30,6 @@ namespace amieats.Controller
             // muat kategori dan menu
             showCategory();
             showMenu(1);
-            
         }
 
         public void showCategory()

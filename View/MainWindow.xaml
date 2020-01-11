@@ -12,6 +12,7 @@
         ShowsNavigationUI="False"
         Navigating="NavigationWindow_Navigating" 
         Loaded="NavigationWindow_Loaded" 
+        x:Name="TopWindow"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"

@@ -29,24 +29,21 @@ namespace amieats.View
         {
             InitializeComponent();
             cHome = new Controller.HomeController(this);
+
+            updateCartLabel();
         }
 
-        void categoryClick(object sender, RoutedEventArgs e)
+        private void updateCartLabel()
         {
-
-            // Reset all color
-            UIElementCollection childrenList = gridCategory.Children;
-            foreach (View.Module.ItemCategory child in childrenList)
+            int priceTotal = 0;
+            int itemTotal = 0;
+            foreach(CartItem item in CartitemList.Content)
             {
-                child.unselect();
+                itemTotal += item.qty;
+                priceTotal += (item.harga * item.qty);
             }
 
-            // Change clicked element color
-            View.Module.ItemCategory src = sender as View.Module.ItemCategory;
-            src.select();
-
-            // Load the menu
-            cHome.showMenu(src.getId());
+            lblTotal.Content = itemTotal + " item (Rp " + priceTotal + ")";
         }
 
         void menuClick(object sender, RoutedEventArgs e)
@@ -87,9 +84,22 @@ namespace amieats.View
             }
         }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        void categoryClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Cart());
+
+            // Reset all color
+            UIElementCollection childrenList = gridCategory.Children;
+            foreach (View.Module.ItemCategory child in childrenList)
+            {
+                child.unselect();
+            }
+
+            // Change clicked element color
+            View.Module.ItemCategory src = sender as View.Module.ItemCategory;
+            src.select();
+
+            // Load the menu
+            cHome.showMenu(src.getId());
         }
 
         private void borderClose_MouseDown(object sender, MouseButtonEventArgs e)
@@ -150,14 +160,15 @@ namespace amieats.View
             sb.Begin();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Window parent = Window.GetWindow(this);
             parent.DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Cart());
         }
     }
 }

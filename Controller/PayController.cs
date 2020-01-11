@@ -13,6 +13,7 @@ namespace amieats.Controller
         private Model.ItemTransaksiModel mItemTransaksi;
 
         private string metodePembayaran;
+        private string kodeMeja;
 
         public PayController(View.Pay vPay)
         {
@@ -24,6 +25,11 @@ namespace amieats.Controller
         public void setMetodePembayaran(string metode)
         {
             this.metodePembayaran = metode;
+        }
+
+        public void setKodeMeja(string kode)
+        {
+            this.kodeMeja = kode;
         }
 
         public void submitTransaction()
@@ -40,7 +46,7 @@ namespace amieats.Controller
             mTransaksi.SetMetode(metodePembayaran);
             mTransaksi.SetTanggal(DateTime.Now.ToString("yyyy-MM-dd"));
             mTransaksi.SetTotal(total);
-            mTransaksi.setKodeMeja("00");
+            mTransaksi.setKodeMeja(kodeMeja);
 
             int id_transaksi = mTransaksi.InsertTransaksi();
 
@@ -52,9 +58,13 @@ namespace amieats.Controller
                 mItemTransaksi.SetId_variasi(item.id_variasi);
                 mItemTransaksi.SetQty(item.qty);
                 mItemTransaksi.SetSubtotal(item.harga);
+                mItemTransaksi.setNote(item.catatan);
                 mItemTransaksi.SetStatus("pending");
                 mItemTransaksi.InsertItemTransaksi();
             }
+
+            // clear the item
+            CartitemList.Content.Clear();
 
         }
     }

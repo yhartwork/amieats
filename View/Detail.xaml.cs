@@ -47,9 +47,14 @@ namespace amieats.View
             cDetail.updateVariasi();
         }
 
-        private void btnAdd_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             cDetail.addToCart();
+        }
+
+        private void clearSelection_Click(object sender, RoutedEventArgs e)
+        {
+            cDetail.refreshFrame();
         }
     }
 }

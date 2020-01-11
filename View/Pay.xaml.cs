@@ -23,11 +23,13 @@ namespace amieats.View
     {
 
         private Controller.PayController cPay;
+        private string kodeMeja;
 
-        public Pay()
+        public Pay(string kodeMeja)
         {
             InitializeComponent();
             cPay = new Controller.PayController(this);
+            this.kodeMeja = kodeMeja;
         }
 
         private void btnBackToCart_Click(object sender, RoutedEventArgs e)
@@ -122,6 +124,9 @@ namespace amieats.View
         {
             if (e.Key == Key.LeftCtrl)
             {
+
+                // insert meja
+                cPay.setKodeMeja(kodeMeja);
                 // insert to database
                 cPay.submitTransaction();
 

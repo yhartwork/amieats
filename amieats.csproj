@@ -28,7 +28,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -104,6 +104,9 @@
     <Compile Include="Model\MenuModel.cs" />
     <Compile Include="Model\TransaksiModel.cs" />
     <Compile Include="Model\VariasiModel.cs" />
+    <Compile Include="View\Meja.xaml.cs">
+      <DependentUpon>Meja.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Module\ItemCart.xaml.cs">
       <DependentUpon>ItemCart.xaml</DependentUpon>
     </Compile>
@@ -155,6 +158,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Meja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Module\ItemCart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -337,6 +344,18 @@
     <Resource Include="Image\menu\sup zuppa.png" />
     <Resource Include="Image\menu\tomyam.png" />
     <Resource Include="Image\menu\kopi.png" />
+    <Resource Include="Image\menu\kebul.png" />
+    <Resource Include="Image\menu\nasigorengmerah.png" />
+    <Resource Include="Image\menu\sego kuning.png" />
+    <Resource Include="Image\menu\segobakar.png" />
+    <Resource Include="Image\menu\segobalap.png" />
+    <Resource Include="Image\menu\segogoreng.png" />
+    <Resource Include="Image\menu\segogudeg.png" />
+    <Resource Include="Image\menu\segoliwet.png" />
+    <Resource Include="Image\menu\segorames.png" />
+    <Resource Include="Image\menu\segouduk.png" />
+    <Resource Include="Image\asset\cherry-list-is-empty-1.png" />
+    <Resource Include="Image\asset\giphy.gif" />
     <Content Include="Model\database.sql" />
   </ItemGroup>
   <ItemGroup>

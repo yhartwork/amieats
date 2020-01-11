@@ -12,15 +12,15 @@
         <Label x:Name="lblNama" Content="Nasi Goreng: Spesial Pedas" HorizontalAlignment="Left" Margin="136,0,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Padding="0,0,5,5" Foreground="#FF333333"/>
         <Label x:Name="lblWarung" Content="Warung Bu Painah" HorizontalAlignment="Left" Margin="136,29,0,0" VerticalAlignment="Top" Padding="0,0,5,5" FontSize="14" Foreground="#FF666666"/>
         <Label x:Name="lblHarga" Content="@ Rp. 20.000" HorizontalAlignment="Left" Margin="136,74,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Padding="0"/>
-        <StackPanel x:Name="_0" Orientation="Horizontal" Margin="0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="125">
-            <Button x:Name="cmdDown" x:FieldModifier="private" Margin="0" Width="40" Click="cmdDown_Click" HorizontalAlignment="Right" Padding="0">
+        <StackPanel x:Name="_0" Orientation="Horizontal" Margin="0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="111">
+            <Button x:Name="cmdDown" x:FieldModifier="private" Margin="0,0,0,1" Width="33" Click="cmdDown_Click" HorizontalAlignment="Right" Padding="0">
                 <materialDesign:PackIcon Kind="MinusCircle"></materialDesign:PackIcon>
             </Button>
-            <Label x:Name="lblQty" BorderBrush="{x:Null}"  x:FieldModifier="private" Margin="0" Width="46" Content="0" Height="32" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFEAEAEA" BorderThickness="0,1"/>
-            <Button x:Name="cmdUp" x:FieldModifier="private" Margin="0" Width="40" Click="cmdUp_Click" HorizontalAlignment="Left" Padding="0">
+            <Label x:Name="lblQty" BorderBrush="{x:Null}"  x:FieldModifier="private" Margin="0" Width="46" Content="0" Height="32" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" BorderThickness="0,1" FontWeight="SemiBold"/>
+            <Button x:Name="cmdUp" x:FieldModifier="private" Margin="0,0,0,1" Width="31" Click="cmdUp_Click" HorizontalAlignment="Left" Padding="0">
                 <materialDesign:PackIcon Kind="PlusCircle"></materialDesign:PackIcon>
             </Button>
         </StackPanel>
-        <TextBox x:Name="txtCatatan" materialDesign:HintAssist.Hint="Catatan" HorizontalAlignment="Left" Height="35" Margin="432,33,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" TextChanged="txtCatatan_TextChanged"/>
+        <TextBox x:Name="txtCatatan" materialDesign:HintAssist.Hint="Catatan" HorizontalAlignment="Left" Height="37" Margin="489,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="107" TextChanged="txtCatatan_TextChanged"/>
     </Grid>
 </UserControl>

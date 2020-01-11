@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.Windows;
 
 namespace amieats.Controller
 {
@@ -43,7 +44,7 @@ namespace amieats.Controller
                 BitmapImage image = new BitmapImage(new Uri("/amieats;component/Image/menu/" + item.foto + ".png", UriKind.Relative));
                 View.Module.ItemCart iCart = new View.Module.ItemCart(index);
                 iCart.lblHarga.Content = "@ Rp" + item.harga;
-                iCart.lblNama.Content = item.nama + (item.nama_variasi != "" ? ": " + item.nama_variasi : "");
+                iCart.lblNama.Content = item.nama + (item.id_variasi > 0 ? ": " + item.nama_variasi : "");
                 iCart.lblWarung.Content = item.nama_warung;
                 iCart.txtCatatan.Text = item.catatan;
                 iCart.imageMenu.Source = image;
@@ -58,6 +59,18 @@ namespace amieats.Controller
             }
 
             updateTotal();
+
+            if(total == 0)
+            {
+                vCart.viever.Visibility = Visibility.Hidden;
+                vCart.gridBottom.Visibility = Visibility.Hidden;
+                vCart.imgEmpty.Visibility = Visibility.Visible;
+            } else
+            {
+                vCart.viever.Visibility = Visibility.Visible;
+                vCart.gridBottom.Visibility = Visibility.Visible;
+                vCart.imgEmpty.Visibility = Visibility.Hidden;
+            }
 
         }
     }

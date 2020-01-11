@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="120" d:DesignWidth="120" 
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" >
-    <Border x:Name="btnBg" Grid.Column="0" BorderThickness="0" Height="130" Background="#0C000000" Cursor="Hand">
+    <Border materialDesign:RippleAssist.RippleOnTop="True" x:Name="btnBg" Grid.Column="0" BorderThickness="0" Height="130" Background="#0C000000" Cursor="Hand">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="ImageCategory" Source="/amieats;component/Image/category/category (1).png" Margin="0,-10,0,0" Height="74" HorizontalAlignment="Left" VerticalAlignment="Center" UseLayoutRounding="True" Width="72" />
             <Border BorderThickness="1" HorizontalAlignment="Center" Height="21" Margin="0,-20,0,0" VerticalAlignment="Top" Width="66" CornerRadius="10" Background="#99000000">

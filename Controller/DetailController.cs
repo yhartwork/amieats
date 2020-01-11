@@ -89,6 +89,9 @@ namespace amieats.Controller
             }
             else
             {
+
+                variationList.Add(new VariationItem(0, "Tanpa variasi", 0));
+
                 foreach (DataTable table in dataSet.Tables)
                 {
                     foreach (DataRow row in table.Rows)
@@ -100,6 +103,7 @@ namespace amieats.Controller
                         variationList.Add(new VariationItem(id, nama, harga_tambahan));
                     }
                 }
+
 
                 vDetail.cboxVariasi.ItemsSource = variationList;
             }
@@ -164,6 +168,11 @@ namespace amieats.Controller
             this.nama_variasi = selected.nama;
 
             updateSubtotal();
+        }
+
+        public void refreshFrame()
+        {
+            vHome.frmDetail.Refresh();
         }
     }
 }
